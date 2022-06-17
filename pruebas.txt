@@ -1,0 +1,120 @@
+PS C:\Users\franc\Desktop\Login> nodemon server.js
+[nodemon] 2.0.15
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,json  
+[nodemon] starting `node server.js`
+Conectado a MongoDB
+I am a master 2368
+Conectado a MongoDB
+Worker 20120 started
+Conectado a MongoDB
+Worker 16688 started
+Conectado a MongoDB
+Worker 16300 started
+Conectado a MongoDB
+Conectado a MongoDB
+Worker 12684 started
+20120 es listening in port 8000
+16688 es listening in port 8000
+16300 es listening in port 8000
+12736 es listening in port 8000
+12684 es listening in port 8000
+Conectado a MongoDB
+Worker 15980 started
+15980 es listening in port 8000
+
+//  Forever
+
+PS C:\Users\franc\Desktop\Nueva carpeta (5)> forever start app.js
+warn:    --minUptime not set. Defaulting to: 1000ms
+warn:    --spinSleepTime not set. Your script will exit if it does not stay up for at least 1000ms
+info:    Forever processing file: app.js
+(node:17532) Warning: Accessing non-existent property 'padLevels' of module exports inside circular dependency
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:17532) Warning: Accessing non-existent property 'padLevels' of module exports inside circular dependency
+PS C:\Users\franc\Desktop\Nueva carpeta (5)> forever list
+(node:8172) Warning: Accessing non-existent property 'padLevels' of module exports inside circular dependency
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:8172) Warning: Accessing non-existent property 'padLevels' of module exports inside circular dependency
+info:    Forever processes running
+data:        uid  command                            script                                          forever pid  id logfile                          uptime
+data:    [0] FZf2 "C:\Program Files\nodejs\node.exe" C:\Users\franc\Desktop\Nueva carpeta (5)\app.js 1636    1932    C:\Users\franc\.forever\FZf2.log 0:0:2:1.5699999999999932
+
+
+// PM2
+
+PS C:\Users\franc\Desktop\Nueva carpeta (5)> pm2 start app.js --watch
+
+                        -------------
+
+__/\\\\\\\\\\\\\____/\\\\____________/\\\\____/\\\\\\\\\_____
+ _\/\\\/////////\\\_\/\\\\\\________/\\\\\\__/\\\///////\\\___
+  _\/\\\_______\/\\\_\/\\\//\\\____/\\\//\\\_\///______\//\\\__
+   _\/\\\\\\\\\\\\\/__\/\\\\///\\\/\\\/_\/\\\___________/\\\/___
+    _\/\\\/////////____\/\\\__\///\\\/___\/\\\________/\\\//_____
+     _\/\\\_____________\/\\\____\///_____\/\\\_____/\\\//________
+      _\/\\\_____________\/\\\_____________\/\\\___/\\\/___________
+       _\/\\\_____________\/\\\_____________\/\\\__/\\\\\\\\\\\\\\\_
+        _\///______________\///______________\///__\///////////////__
+
+
+                          Runtime Edition
+
+        PM2 is a Production Process Manager for Node.js applications
+                     with a built-in Load Balancer.
+
+                Start and Daemonize any application:
+                $ pm2 start app.js
+
+                Load Balance 4 instances of api.js:
+                $ pm2 start api.js -i 4
+                Monitor in production:
+                $ pm2 monitor
+
+                Make pm2 auto-boot at server restart:
+                $ pm2 startup
+
+                To go further checkout:
+                http://pm2.io/
+
+
+                        -------------
+
+[PM2] Spawning PM2 daemon with pm2_home=C:\Users\franc\.pm2
+[PM2] PM2 Successfully daemonized
+[PM2] Starting C:\Users\franc\Desktop\Nueva carpeta (5)\app.js in fork_mode (1 instance)
+[PM2] Done.
+┌─────┬────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id  │ name   │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+├─────┼────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
+│ 0   │ app    │ default     │ 1.0.0   │ fork    │ 5152     │ 0      │ 1    │ stopped   │ 0%       │ 0b       │ franc    │ enabled  │
+└─────┴────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
+
+PS C:\Users\franc\Desktop\Nueva carpeta (5)> pm2 stop app.js
+[PM2] Applying action stopProcessId on app [app.js](ids: [ 0 ])
+[PM2] [app](0) ✓
+┌─────┬────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id  │ name   │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+├─────┼────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
+│ 0   │ app    │ default     │ 1.0.0   │ fork    │ 0        │ 0      │ 127  │ stopped   │ 0%       │ 0b       │ franc    │ disabled │
+└─────┴────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
+PS C:\Users\franc\Desktop\Nueva carpeta (5)> pm2 delete app.js
+[PM2] Applying action deleteProcessId on app [app.js](ids: [ 0 ])
+[PM2] [app](0) ✓
+┌─────┬───────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id  │ name      │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+└─────┴───────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
+PS C:\Users\franc\Desktop\Nueva carpeta (5)> pm2 start app.js --watch -i max
+[PM2] Starting C:\Users\franc\Desktop\Nueva carpeta (5)\app.js in cluster_mode (0 instance)
+[PM2] Done.
+┌─────┬────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id  │ name   │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+├─────┼────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
+│ 0   │ app    │ default     │ 1.0.0   │ cluster │ 6896     │ 0      │ 3    │ stopped   │ 0%       │ 0b       │ franc    │ enabled  │
+│ 1   │ app    │ default     │ 1.0.0   │ cluster │ 9172     │ 0      │ 2    │ stopped   │ 0%       │ 0b       │ franc    │ enabled  │
+│ 2   │ app    │ default     │ 1.0.0   │ cluster │ 9028     │ 0      │ 2    │ stopped   │ 0%       │ 0b       │ franc    │ enabled  │
+│ 3   │ app    │ default     │ 1.0.0   │ cluster │ 14148    │ 0      │ 2    │ stopped   │ 0%       │ 0b       │ franc    │ enabled  │
+│ 4   │ app    │ default     │ 1.0.0   │ cluster │ 10420    │ 0      │ 1    │ stopped   │ 0%       │ 0b       │ franc    │ enabled  │
+│ 5   │ app    │ default     │ 1.0.0   │ cluster │ 6276     │ 0      │ 1    │ stopped   │ 0%       │ 0b       │ franc    │ enabled  │
+└─────┴────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
