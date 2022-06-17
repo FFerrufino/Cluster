@@ -1,0 +1,1 @@
+2022/06/16 22:42:19 [error] 10900#12856: *1 CreateFile() "C:\Users\franc\Desktop\Nueva carpeta (5)\nginx-1.21.6/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
